@@ -21,7 +21,6 @@ const Slider = () => {
         <div className='slider'>
             <div className="container">
                 <img src={data[currentSlide]} alt="" />
-
             </div>
             <div className="icons">
                 <div className="icon" onClick={previousSlide}>

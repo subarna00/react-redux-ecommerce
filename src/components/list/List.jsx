@@ -1,8 +1,7 @@
-
 import React from 'react'
 import Card from '../card/Card'
-import './FeaturedProducts.scss'
-const FeaturedProducts = ({ type }) => {
+import './List.scss'
+const List = () => {
     const data = [
         {
             id: 1,
@@ -40,24 +39,26 @@ const FeaturedProducts = ({ type }) => {
             oldPrice: 19,
             price: 12,
         },
+        {
+            id: 5,
+            img: 'https://images.pexels.com/photos/1206873/pexels-photo-1206873.jpeg?auto=compress&cs=tinysrgb&w=800',
+            img2: 'https://images.pexels.com/photos/1643025/pexels-photo-1643025.jpeg?auto=compress&cs=tinysrgb&w=800',
+            title: "Coat",
+            isNew: true,
+            oldPrice: 19,
+            price: 12,
+        },
+
     ]
     return (
-        <div className='featuredProducts'>
-            <div className="top">
-                <h1>{type} products</h1>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore atque expedita a explicabo consectetur voluptates veniam suscipit ex? Sequi saepe laboriosam laborum iure. Dolorem, repudiandae vero. Est sed ipsam exercitationem.
-                </p>
-            </div>
-            <div className="bottom">
-                {
-                    data.map((card) => {
-                        return <Card item={card} key={card.id} />
-                    })
-                }
-            </div>
+        <div className='list'>
+            {
+                data?.map((item) => (
+                    <Card item={item} key={item.id} />
+                ))
+            }
         </div>
     )
 }
 
-export default FeaturedProducts
+export default List
